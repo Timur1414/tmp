@@ -19,7 +19,7 @@ public:
 	}
 	ConcretePrototype(const ConcretePrototype& cp){
 		*this = cp;	
-		cout<<"ConcretePrototype copy ..."<<endl;
+		std::cout<<"ConcretePrototype copy ..."<<std::endl;
 	}
 	~ConcretePrototype(){
 
