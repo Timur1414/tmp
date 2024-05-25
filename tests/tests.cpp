@@ -29,3 +29,14 @@ public:
 	}
 };
 
+TEST(Prototype_tests, test3) {
+    std::ostringstream oss;
+    std::streambuf* cout_streambuf = std::cout.rdbuf();
+    std::cout.rdbuf(oss.rdbuf());
+
+    Prototype* p = new ConcretePrototype();
+    Prototype* p1 = p->Clone();
+
+    std::cout.rdbuf(cout_streambuf);
+    EXPECT_EQ(oss.str(), "ConcretePrototype copy ...\n");
+}
