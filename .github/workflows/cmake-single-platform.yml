@@ -1,0 +1,17 @@
+name: CMake on a single platform
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build
+      run: |
+        cmake -H. -B_build
+        cmake --build _build
